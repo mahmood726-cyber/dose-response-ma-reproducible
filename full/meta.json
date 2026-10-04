@@ -1,0 +1,36 @@
+{
+ "mode": "full",
+ "all_ok": true,
+ "when": "2026-10-04 11:33 UTC",
+ "sha": "ca5e3aef11272427592d98f46760ef1cc98a922e",
+ "run_id": "37198973029",
+ "run_url": "https://github.com/mahmood726-cyber/dose-response-ma-reproducible/actions/runs/37198973029",
+ "platforms": [
+  {
+   "platform": "Docker (canonical)",
+   "artifact": "full-docker",
+   "ok": true,
+   "summary": "49/49 numbers reproduced"
+  },
+  {
+   "platform": "Linux",
+   "artifact": "full-ubuntu-latest",
+   "ok": true,
+   "summary": "49/49 numbers reproduced"
+  },
+  {
+   "platform": "Windows",
+   "artifact": "full-windows-latest",
+   "ok": true,
+   "summary": "49/49 numbers reproduced"
+  },
+  {
+   "platform": "macOS",
+   "artifact": "full-macos-latest",
+   "ok": true,
+   "summary": "49/49 numbers reproduced"
+  }
+ ],
+ "compare": "success",
+ "mode_note": "Full validation: every number in the paper."
+}
