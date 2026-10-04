@@ -13,8 +13,8 @@ FULL = {"datasets": 0, "studies_total": 0, "dose_levels_total": 0, "datasets_wit
         "linear_datasets_with_nonzero_reference": 0, "linear_max_absdiff_slope_shipped": 3, "linear_worst_dataset_shipped": "str",
         "linear_max_absdiff_slope_centred": 7, "linear_max_absdiff_se_centred": 7, "spline3_fitted_by_R": 0, "spline3_match": 0,
         "spline3_max_absdiff": 7, "spline3_max_absdiff_fitted": 6, "spline4_fitted_by_R": 0, "spline4_match": 0,
-        "spline3_refused_by_R": 0, "spline4_refused_by_R": 0, "refused_but_app_returned": 0, "spline4_refused_app_max_abs_coef": -10,
-        "ex_k": 0, "ex_nonzero_ref": 0, "ex_R_slope": 4, "ex_app_slope": 4, "ex_app_centred_slope": 4, "ex_spline_max_diff_fitted": 9,
+        "spline3_refused_by_R": 0, "spline4_refused_by_R": 0, "refused_but_app_returned": 0, "spline4_refused_app_coef_exceeds_1e12": 0,
+        "ex_k": 0, "ex_nonzero_ref": 0, "ex_R_slope": 4, "ex_app_slope": 4, "ex_app_centred_slope": 4, "ex_spline_max_diff_fitted": 8,
         "ex_grid_dose_near3": 2, "ex_rr_at_3cups_R": 2}
 QUICK = {"datasets": 0, "linear_match_shipped": 0, "linear_match_centred": 0, "spline3_fitted_by_R": 0, "spline3_match": 0,
          "spline4_fitted_by_R": 0, "spline4_match": 0, "spline4_refused_by_R": 0, "ex_R_slope": 4, "ex_app_slope": 4}

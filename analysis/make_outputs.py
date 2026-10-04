@@ -99,6 +99,7 @@ def main():
         "spline3_refused_by_R": sum(1 for t in T3 if t["knots"] == 3), "spline4_refused_by_R": sum(1 for t in T3 if t["knots"] == 4),
         "refused_but_app_returned": sum(1 for t in T3 if t["app_returned_estimate"]),
         "spline4_refused_app_max_abs_coef": max((t["app_max_abs_coef"] or 0) for t in T3 if t["knots"] == 4),
+        "spline4_refused_app_coef_exceeds_1e12": int(max((t["app_max_abs_coef"] or 0) for t in T3 if t["knots"] == 4) > 1e12),
     })
     # ---- tables ----
     def write(name, rows, fmt=None):

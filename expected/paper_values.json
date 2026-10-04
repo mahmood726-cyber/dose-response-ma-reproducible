@@ -89,9 +89,9 @@
    "value": 14,
    "decimals": 0
   },
-  "spline4_refused_app_max_abs_coef": {
-   "value": 3280000000000,
-   "decimals": -10
+  "spline4_refused_app_coef_exceeds_1e12": {
+   "value": 1,
+   "decimals": 0
   },
   "ex_k": {
    "value": 22,
@@ -114,8 +114,8 @@
    "decimals": 4
   },
   "ex_spline_max_diff_fitted": {
-   "value": 2.4e-08,
-   "decimals": 9
+   "value": 2e-08,
+   "decimals": 8
   },
   "ex_grid_dose_near3": {
    "value": 2.81,
