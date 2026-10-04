@@ -6,8 +6,14 @@ authors:
   - family-names: Ahmad
     given-names: Mahmood
 repository-code: "https://github.com/mahmood726-cyber/dose-response-ma-reproducible"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.23135712
+    description: "Archived release v1.0.0 (Zenodo)"
 license: MIT
 version: 1.0.0
+doi: 10.5281/zenodo.23135712
+date-released: 2026-10-04
 keywords:
   - dose-response meta-analysis
   - restricted cubic splines

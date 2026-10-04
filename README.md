@@ -2,6 +2,7 @@
 
 [![reproduce](https://github.com/mahmood726-cyber/dose-response-ma-reproducible/actions/workflows/reproduce.yml/badge.svg)](https://github.com/mahmood726-cyber/dose-response-ma-reproducible/actions/workflows/reproduce.yml)
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/mahmood726-cyber/dose-response-ma-reproducible?quickstart=1)
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23135712.svg)](https://doi.org/10.5281/zenodo.23135712)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
 
 The [allmeta](https://github.com/mahmood726-cyber/allmeta) **dose-response app** runs dose-response meta-analysis offline in the browser
@@ -104,7 +105,7 @@ Studies without case and total counts are excluded, because the covariance recon
 
 ## Cite
 
-See `CITATION.cff`. The archived release DOI will be added after the first Zenodo release.
+Ahmad M. Dose-response meta-analysis in the browser: a tool validated against the R package dosresmeta [software], v1.0.0. Zenodo; 2026. doi:[10.5281/zenodo.23135712](https://doi.org/10.5281/zenodo.23135712). Machine-readable metadata: `CITATION.cff`.
 
 ## Licence
 

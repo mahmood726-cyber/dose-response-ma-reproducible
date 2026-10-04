@@ -107,12 +107,12 @@ A browser tool can reproduce standard dose-response meta-analysis, validated acr
 
 **Underlying data:** datasets distributed with the R package dosresmeta 2.2.0 [10] (GPL-2 | GPL-3), built at run time and not redistributed.
 
-**Extended data:** the validated app, analysis code, expected values, tables, figures and screenshots are at https://github.com/mahmood726-cyber/dose-response-ma-reproducible, archived at Zenodo [DOI — TO BE MINTED]. Licence: MIT.
+**Extended data:** the validated app, analysis code, expected values, tables, figures and screenshots are at https://github.com/mahmood726-cyber/dose-response-ma-reproducible, archived at Zenodo (https://doi.org/10.5281/zenodo.23135712). Licence: MIT.
 
 ## Software availability
 
 - **Source code available from:** https://github.com/mahmood726-cyber/allmeta (`dose-response-ma/`, `shared/dose-response.js`); validated version: commit 0f8b86d984e4cba36f4f517f674a233d205e5e22
-- **Archived source code at time of publication:** [ZENODO DOI — TO BE MINTED for dose-response-ma-reproducible v1.0.0]
+- **Archived source code at time of publication:** https://doi.org/10.5281/zenodo.23135712 (dose-response-ma-reproducible v1.0.0)
 - **Licence:** MIT
 
 ## Competing interests
