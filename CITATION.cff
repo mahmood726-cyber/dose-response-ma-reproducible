@@ -1,0 +1,23 @@
+cff-version: 1.2.0
+title: "dose-response-ma-reproducible: validation of the allmeta dose-response meta-analysis app against R dosresmeta"
+message: "If you use this software or validation, please cite it using the metadata below, and cite dosresmeta and the original dataset authors."
+type: software
+authors:
+  - family-names: Ahmad
+    given-names: Mahmood
+repository-code: "https://github.com/mahmood726-cyber/dose-response-ma-reproducible"
+license: MIT
+version: 1.0.0
+keywords:
+  - dose-response meta-analysis
+  - restricted cubic splines
+  - dosresmeta
+  - software validation
+  - reproducibility
+references:
+  - type: software
+    title: "allmeta — open browser-only tools for evidence synthesis"
+    authors:
+      - family-names: Ahmad
+        given-names: Mahmood
+    doi: 10.5281/zenodo.20516880

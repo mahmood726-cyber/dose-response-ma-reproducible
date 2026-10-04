@@ -1,0 +1,129 @@
+{
+ "source": "Canonical run (full mode): values as printed in the paper.",
+ "values": {
+  "datasets": {
+   "value": 17,
+   "decimals": 0
+  },
+  "studies_total": {
+   "value": 203,
+   "decimals": 0
+  },
+  "dose_levels_total": {
+   "value": 890,
+   "decimals": 0
+  },
+  "datasets_with_reference": {
+   "value": 16,
+   "decimals": 0
+  },
+  "studies_excluded_missing_counts": {
+   "value": 16,
+   "decimals": 0
+  },
+  "studies_analysed": {
+   "value": 187,
+   "decimals": 0
+  },
+  "linear_match_shipped": {
+   "value": 4,
+   "decimals": 0
+  },
+  "linear_match_centred": {
+   "value": 16,
+   "decimals": 0
+  },
+  "linear_datasets_with_nonzero_reference": {
+   "value": 12,
+   "decimals": 0
+  },
+  "linear_max_absdiff_slope_shipped": {
+   "value": 0.056,
+   "decimals": 3
+  },
+  "linear_worst_dataset_shipped": {
+   "value": "bmi_rc",
+   "decimals": 0
+  },
+  "linear_max_absdiff_slope_centred": {
+   "value": 2e-07,
+   "decimals": 7
+  },
+  "linear_max_absdiff_se_centred": {
+   "value": 2e-07,
+   "decimals": 7
+  },
+  "spline3_fitted_by_R": {
+   "value": 15,
+   "decimals": 0
+  },
+  "spline3_match": {
+   "value": 14,
+   "decimals": 0
+  },
+  "spline3_max_absdiff": {
+   "value": 1e-06,
+   "decimals": 7
+  },
+  "spline3_max_absdiff_fitted": {
+   "value": 1.3e-05,
+   "decimals": 6
+  },
+  "spline4_fitted_by_R": {
+   "value": 3,
+   "decimals": 0
+  },
+  "spline4_match": {
+   "value": 0,
+   "decimals": 0
+  },
+  "spline3_refused_by_R": {
+   "value": 1,
+   "decimals": 0
+  },
+  "spline4_refused_by_R": {
+   "value": 13,
+   "decimals": 0
+  },
+  "refused_but_app_returned": {
+   "value": 14,
+   "decimals": 0
+  },
+  "spline4_refused_app_max_abs_coef": {
+   "value": 3280000000000,
+   "decimals": -10
+  },
+  "ex_k": {
+   "value": 22,
+   "decimals": 0
+  },
+  "ex_nonzero_ref": {
+   "value": 12,
+   "decimals": 0
+  },
+  "ex_R_slope": {
+   "value": -0.0326,
+   "decimals": 4
+  },
+  "ex_app_slope": {
+   "value": -0.0313,
+   "decimals": 4
+  },
+  "ex_app_centred_slope": {
+   "value": -0.0326,
+   "decimals": 4
+  },
+  "ex_spline_max_diff_fitted": {
+   "value": 2.4e-08,
+   "decimals": 9
+  },
+  "ex_grid_dose_near3": {
+   "value": 2.81,
+   "decimals": 2
+  },
+  "ex_rr_at_3cups_R": {
+   "value": 0.84,
+   "decimals": 2
+  }
+ }
+}

@@ -1,0 +1,5 @@
+{
+  "name": "dose-response-ma-reproducible",
+  "build": { "dockerfile": "../Dockerfile", "context": ".." },
+  "overrideCommand": true
+}

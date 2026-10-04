@@ -1,0 +1,38 @@
+{
+  "title": "Dose-response meta-analysis in the browser: validation of the allmeta dose-response app against R dosresmeta",
+  "description": "Frozen copy of the allmeta dose-response meta-analysis app (two-stage Greenland-Longnecker method; linear trend and restricted cubic splines, REML pooling) and a one-command validation of its shipped engine against the R package dosresmeta on every multi-study binary dataset bundled with dosresmeta. Includes the corpus builder, R reference fits, the engine runner, the analysis that regenerates the article's tables, figures and statistics with a PASS/FAIL check of every number, a Docker image (canonical environment: R 4.6.0, dosresmeta 2.2.0, Node 24.15.0) and CI on Linux, Windows, macOS and Docker. The validation documents both agreement (3-knot splines) and defects of the shipped app (linear trend with non-zero reference doses; 4-knot splines; no refusal of unidentifiable spline fits).",
+  "upload_type": "software",
+  "license": "MIT",
+  "access_right": "open",
+  "creators": [
+    {
+      "name": "Ahmad, Mahmood"
+    }
+  ],
+  "keywords": [
+    "dose-response meta-analysis",
+    "restricted cubic splines",
+    "Greenland-Longnecker",
+    "dosresmeta",
+    "software validation",
+    "reproducibility",
+    "browser"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/mahmood726-cyber/dose-response-ma-reproducible",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/mahmood726-cyber/allmeta",
+      "relation": "isDerivedFrom",
+      "scheme": "url"
+    },
+    {
+      "identifier": "10.5281/zenodo.20516880",
+      "relation": "isDerivedFrom",
+      "scheme": "doi"
+    }
+  ]
+}

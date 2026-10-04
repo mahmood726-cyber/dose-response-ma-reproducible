@@ -1,0 +1,45 @@
+{
+ "source": "Canonical run (quick mode): values as printed in the paper.",
+ "values": {
+  "datasets": {
+   "value": 3,
+   "decimals": 0
+  },
+  "linear_match_shipped": {
+   "value": 2,
+   "decimals": 0
+  },
+  "linear_match_centred": {
+   "value": 3,
+   "decimals": 0
+  },
+  "spline3_fitted_by_R": {
+   "value": 3,
+   "decimals": 0
+  },
+  "spline3_match": {
+   "value": 3,
+   "decimals": 0
+  },
+  "spline4_fitted_by_R": {
+   "value": 2,
+   "decimals": 0
+  },
+  "spline4_match": {
+   "value": 0,
+   "decimals": 0
+  },
+  "spline4_refused_by_R": {
+   "value": 1,
+   "decimals": 0
+  },
+  "ex_R_slope": {
+   "value": -0.0326,
+   "decimals": 4
+  },
+  "ex_app_slope": {
+   "value": -0.0313,
+   "decimals": 4
+  }
+ }
+}
