@@ -1,5 +1,11 @@
 {
   "name": "dose-response-ma-reproducible",
   "build": { "dockerfile": "../Dockerfile", "context": ".." },
-  "overrideCommand": true
+  "overrideCommand": true,
+  "postCreateCommand": "bash .devcontainer/post-create.sh",
+  "customizations": {
+    "codespaces": { "openFiles": ["README.md"] },
+    "vscode": { "extensions": ["ms-python.python"] }
+  },
+  "hostRequirements": { "cpus": 2, "memory": "4gb" }
 }

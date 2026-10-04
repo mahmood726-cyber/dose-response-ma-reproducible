@@ -4,6 +4,7 @@
 [![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/mahmood726-cyber/dose-response-ma-reproducible?quickstart=1)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23135712.svg)](https://doi.org/10.5281/zenodo.23135712)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![Latest verified run](https://img.shields.io/badge/latest%20verified%20run-results%20page-2c5e8a)](https://mahmood726-cyber.github.io/dose-response-ma-reproducible/)
 
 The [allmeta](https://github.com/mahmood726-cyber/allmeta) **dose-response app** runs dose-response meta-analysis offline in the browser
 ([live](https://mahmood726-cyber.github.io/allmeta/dose-response-ma/)). It offers:
@@ -16,7 +17,45 @@ The [allmeta](https://github.com/mahmood726-cyber/allmeta) **dose-response app**
 
 This repository validates the app against the R package **dosresmeta** on every multi-study binary dataset that dosresmeta ships. It checks every number in the accompanying F1000Research article.
 
-## Quick start
+## Reproduce in one click
+
+There are three ways in, from no effort to a full independent re-run.
+
+**1. See the latest verified run (nothing to run).**
+
+The [results page](https://mahmood726-cyber.github.io/dose-response-ma-reproducible/) is republished by CI after every push to `main`. It shows:
+- the PASS/FAIL table for every number in the paper;
+- the result on each of Docker, Linux, Windows and macOS;
+- the cross-platform comparison;
+- the figures.
+
+**2. Open in GitHub Codespaces (one click).**
+
+Click the *Open in GitHub Codespaces* badge above, then *Create codespace*.
+- The pinned environment is built from this repository's `Dockerfile`: R 4.6.0, the dated package snapshot, Node 24.15.0 and Python.
+- The quick reproduction (3 datasets) then runs automatically. Its log ends with `QUICK RUN: ALL PASS`, and the report is in `outputs/quick/reproduction_report.md`.
+- For the full run, type `python reproduce.py` in the terminal. It takes a few minutes and writes `outputs/full/`.
+
+Limits:
+- You need to be signed in to GitHub.
+- The codespace runs on your own Codespaces allowance. Personal accounts get a free monthly quota of core-hours and storage (see GitHub's billing page); this uses a 2-core machine.
+- The first build takes several minutes, mostly installing the R packages.
+- `codespaces-check` in Actions builds the same devcontainer and runs its automatic quick run on every relevant change.
+
+**3. Re-run the CI yourself (one click in a fork).**
+
+Only maintainers can trigger workflows on this repository, so use your own copy:
+1. Click **Fork**.
+2. In your fork, open the **Actions** tab and click *I understand my workflows, go ahead and enable them*. GitHub disables workflows in new forks.
+3. Choose **reproduce**, then **Run workflow** (branch `main`).
+
+The run is the full validation on Docker, Linux, Windows and macOS (a few minutes each). Actions are free on public repositories.
+- Each job's **summary** shows its PASS/FAIL report.
+- **Artifacts** hold `reproduction-report-<platform>` and the complete outputs (`full-<platform>`).
+- The *compare* job shows the cross-platform check.
+- Publishing to Pages happens only on this repository, so it is skipped in forks.
+
+**On your own machine:**
 
 ```bash
 git clone https://github.com/mahmood726-cyber/dose-response-ma-reproducible && cd dose-response-ma-reproducible
@@ -24,7 +63,6 @@ docker build -t drma . && docker run --rm -v "$PWD/outputs:/work/outputs" drma  
 ```
 
 Without Docker you need R 4.6.0, Node 24.15.0 and Python 3.12 or 3.13:
-
 1. `Rscript bench/install_r_packages.R`
 2. `python -m pip install -r requirements.txt`
 3. `python reproduce.py` (or `--quick`)
@@ -62,6 +100,8 @@ dosresmeta's one-stage optimiser stops at 100 Nelder–Mead evaluations. In 120 
 | `analysis/compare_runs.py` | Cross-platform comparison |
 | `expected/` | Every number as printed in the paper |
 | `docs/` | Paper, `numbers.json`, Figure 1 screenshots and their capture script |
+| `ci/build_site.py` | Builds the live results page from a CI run (reads outputs only) |
+| `.devcontainer/` | Codespaces / dev-container definition; runs the quick reproduction on creation |
 
 ## Outputs and how they map to the paper
 
