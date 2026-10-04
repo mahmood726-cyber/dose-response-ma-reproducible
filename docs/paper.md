@@ -144,14 +144,14 @@ The author develops allmeta. [AUTHOR TO CONFIRM: no other competing interests.]
 
 ## Figure and table legends
 
-**Figure 1.** Using the app, step by step (coffee and all-cause mortality data; Google Chrome, 1400 × 900).
+**Figure 1.** Using the app, step by step (coffee and all-cause mortality data; Google Chrome, light theme; high-resolution captures cropped to the relevant panels).
 (1) Data entry, one row per dose level.
 (2) Choosing the model: curve, knots, covariance, approach and pooling method.
 (3) Linear-trend results.
 (4) Three-knot spline: the non-linearity test and coefficients (A) and the pooled curve with 95% band, study estimates and knots (B).
 (5) Heterogeneity and goodness-of-fit statistics (A) and the decorrelated-residual plot (B).
 (6) Prediction settings (A), predicted relative risks at chosen doses (B) and export buttons (C).
-Panels 4–6 are labelled composites of regions of one page; panels 1–3 are single screenshots.
+Panels 4–6 are labelled composites of regions of one page; panels 1–3 are single crops.
 
 **Figure 2.** Coefficient differences from dosresmeta (in its standard errors) for every fit, by dataset.
 
