@@ -36,7 +36,10 @@ for (d in names(spec)) {
 }
 corpus <- do.call(rbind, L)
 dir.create(dirname(out), showWarnings = FALSE, recursive = TRUE)
-write.csv(corpus, out, row.names = FALSE, fileEncoding = "UTF-8")
+# 17 significant digits (%.17g) round-trip every double exactly, so the corpus file is byte-identical
+# on every platform (write.csv's default 15 digits are rounded differently by different C libraries).
+for (v in c("dose", "cases", "n", "logrr", "se")) corpus[[v]] <- ifelse(is.na(corpus[[v]]), "NA", sprintf("%.17g", corpus[[v]]))
+write.csv(corpus, out, row.names = FALSE, fileEncoding = "UTF-8", quote = c(1, 2, 3))
 cat(sprintf("corpus: %d datasets, %d studies, %d rows (dosresmeta %s)\n", length(spec),
             nrow(unique(corpus[, c("dataset", "id")])), nrow(corpus), packageVersion("dosresmeta")))
 print(table(corpus$dataset, corpus$type))

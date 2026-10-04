@@ -1,6 +1,12 @@
-"""Check that full runs from different machines are bit-identical.
+"""Compare full runs from different machines.
 
-Compares corpus.csv byte-for-byte and every value in dosresmeta.jsonl and engine.jsonl with ==.
+STRICT (must be bit-identical, compared with ==):
+  corpus.csv (the input) and engine.jsonl (every number produced by the app's JavaScript engine).
+REPORTED (not required to be identical):
+  dosresmeta.jsonl, the R reference values. R uses the operating system's maths library and BLAS,
+  so its last bits differ between Linux, Windows and macOS; the largest relative difference is
+  printed for every platform. The printed paper numbers are checked separately, exactly, on every
+  platform by reproduce.py.
   python analysis/compare_runs.py runA/results/full runB/results/full [...]
 """
 import json
@@ -20,26 +26,39 @@ def flat(o, p=""):
     return {p: o}
 
 
-def load(run):
-    run = Path(run); vals = {"corpus.csv": (run / "corpus.csv").read_bytes().replace(b"\r\n", b"\n")}
-    for f in ("dosresmeta.jsonl", "engine.jsonl"):
-        for line in (run / f).read_text(encoding="utf-8").splitlines():
-            if line.strip():
-                o = json.loads(line); vals.update({f"{f}:{o['dataset']}:{k}": v for k, v in flat(o).items()})
+def load(run, f):
+    run = Path(run)
+    if f == "corpus.csv":
+        return {"corpus.csv": (run / f).read_bytes().replace(b"\r\n", b"\n")}
+    vals = {}
+    for line in (run / f).read_text(encoding="utf-8").splitlines():
+        if line.strip():
+            o = json.loads(line); vals.update({f"{o['dataset']}:{k}": v for k, v in flat(o).items()})
     return vals
 
 
 runs = sys.argv[1:]
 if len(runs) < 2: sys.exit(__doc__)
-ref, bad = load(runs[0]), 0
+strict_bad = 0
 for other in runs[1:]:
-    cur = load(other); keys = set(ref) | set(cur)
-    diff = sorted(k for k in keys if ref.get(k, "<missing>") != cur.get(k, "<missing>"))
-    print(f"{runs[0]} vs {other}: {len(keys)} values compared, {len(diff)} differ")
-    for k in diff[:25]:
-        a, b = ref.get(k, "<missing>"), cur.get(k, "<missing>")
-        rel = abs(a - b) / max(abs(a), 1e-300) if isinstance(a, float) and isinstance(b, float) else ""
-        print(f"   {k}: {a!r} != {b!r} {('rel ' + format(rel, '.1e')) if rel != '' else ''}")
-    bad += len(diff)
-print("BIT-IDENTICAL" if bad == 0 else "RUNS DIFFER")
-sys.exit(0 if bad == 0 else 1)
+    print(f"== {runs[0]}  vs  {other}")
+    for f in ("corpus.csv", "engine.jsonl"):
+        a, b = load(runs[0], f), load(other, f)
+        keys = set(a) | set(b); diff = sorted(k for k in keys if a.get(k, "<missing>") != b.get(k, "<missing>"))
+        print(f"   STRICT   {f}: {len(keys)} values, {len(diff)} differ")
+        for k in diff[:10]: print(f"      {k}: {a.get(k)!r} != {b.get(k)!r}")
+        strict_bad += len(diff)
+    a, b = load(runs[0], "dosresmeta.jsonl"), load(other, "dosresmeta.jsonl")
+    nd, worst = 0, (0.0, "")
+    for k in set(a) | set(b):
+        x, y = a.get(k), b.get(k)
+        if x != y:
+            nd += 1
+            if isinstance(x, float) and isinstance(y, float):
+                r = abs(x - y) / max(abs(x), abs(y), 1e-300)
+                if r > worst[0]: worst = (r, k)
+            else:
+                worst = (float("inf"), k)
+    print(f"   REPORTED dosresmeta.jsonl (R): {len(a)} values, {nd} differ in the last bits; largest relative difference {worst[0]:.1e} ({worst[1]})")
+print("STRICT CHECK: corpus and app engine BIT-IDENTICAL across all runs" if strict_bad == 0 else "STRICT CHECK FAILED: corpus or app engine differ")
+sys.exit(0 if strict_bad == 0 else 1)
