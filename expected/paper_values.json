@@ -156,6 +156,18 @@
   "ex_after_slope": {
    "value": -0.0326,
    "decimals": 4
+  },
+  "ex_grid_dose": {
+   "value": 2.0,
+   "decimals": 2
+  },
+  "ex_rr_R": {
+   "value": 0.87,
+   "decimals": 2
+  },
+  "ex_spline_below_1e-8": {
+   "value": 1,
+   "decimals": 0
   }
  }
 }

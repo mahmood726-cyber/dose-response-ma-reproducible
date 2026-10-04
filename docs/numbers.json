@@ -1,286 +1,250 @@
 [
  {
-  "quantity": "Datasets distributed with dosresmeta used",
+  "quantity": "Multi-study binary datasets in dosresmeta",
   "as_printed": "17",
   "canonical_value": 17,
   "stats_key": "datasets",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Studies in those datasets",
   "as_printed": "203",
   "canonical_value": 203,
   "stats_key": "studies_total",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Dose levels",
   "as_printed": "890",
   "canonical_value": 890,
   "stats_key": "dose_levels_total",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Studies excluded (missing counts)",
   "as_printed": "16",
   "canonical_value": 16,
   "stats_key": "studies_excluded_missing_counts",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Datasets analysed",
   "as_printed": "16",
   "canonical_value": 16,
-  "stats_key": "datasets_with_reference",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "datasets_analysed",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Studies analysed",
   "as_printed": "187",
   "canonical_value": 187,
   "stats_key": "studies_analysed",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Linear, as shipped: datasets agreeing (of 16)",
+  "quantity": "Model/option combinations",
+  "as_printed": "724",
+  "canonical_value": 724,
+  "stats_key": "grid_fits",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Original app: linear trend agrees (of 16)",
   "as_printed": "4",
   "canonical_value": 4,
-  "stats_key": "linear_match_shipped",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "before_linear_match",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Datasets with a non-zero reference dose",
   "as_printed": "12",
   "canonical_value": 12,
   "stats_key": "linear_datasets_with_nonzero_reference",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Largest slope difference, as shipped",
+  "quantity": "Original app: largest linear slope error",
   "as_printed": "0.056",
-  "canonical_value": 0.05637192324864207,
-  "stats_key": "linear_max_absdiff_slope_shipped",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "canonical_value": 0.056371923248642083,
+  "stats_key": "before_linear_max_absdiff",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Dataset with largest difference",
+  "quantity": "Dataset with the largest slope error",
   "as_printed": "BMI and renal cancer (bmi_rc)",
   "canonical_value": "bmi_rc",
-  "stats_key": "linear_worst_dataset_shipped",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "before_linear_worst_dataset",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Linear, reference-relative doses: datasets agreeing (of 16)",
-  "as_printed": "16",
-  "canonical_value": 16,
-  "stats_key": "linear_match_centred",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "Largest slope difference, reference-relative",
-  "as_printed": "<= 2e-7",
-  "canonical_value": 1.8257023553375218e-07,
-  "stats_key": "linear_max_absdiff_slope_centred",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "Largest SE difference, reference-relative",
-  "as_printed": "<= 2e-7",
-  "canonical_value": 1.8473073400138151e-07,
-  "stats_key": "linear_max_absdiff_se_centred",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "3-knot spline: datasets dosresmeta could fit",
-  "as_printed": "15",
-  "canonical_value": 15,
-  "stats_key": "spline3_fitted_by_R",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "3-knot spline: datasets agreeing",
-  "as_printed": "14",
-  "canonical_value": 14,
-  "stats_key": "spline3_match",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "3-knot: largest coefficient/covariance/Psi difference",
-  "as_printed": "1.0e-6",
-  "canonical_value": 1.0256197406771639e-06,
-  "stats_key": "spline3_max_absdiff",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "3-knot: largest fitted log-RR difference (the exception)",
-  "as_printed": "1.3e-5",
-  "canonical_value": 1.2606634514966686e-05,
-  "stats_key": "spline3_max_absdiff_fitted",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "4-knot spline: datasets dosresmeta could fit",
+  "quantity": "Four-knot spline fits dosresmeta can make",
   "as_printed": "3",
   "canonical_value": 3,
   "stats_key": "spline4_fitted_by_R",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "4-knot spline: datasets agreeing",
+  "quantity": "Original app: four-knot spline agrees",
   "as_printed": "0",
   "canonical_value": 0,
-  "stats_key": "spline4_match",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "before_spline4_match",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "3-knot fits refused by dosresmeta",
-  "as_printed": "1",
-  "canonical_value": 1,
-  "stats_key": "spline3_refused_by_R",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "4-knot fits refused by dosresmeta",
-  "as_printed": "13",
-  "canonical_value": 13,
-  "stats_key": "spline4_refused_by_R",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "Refused fits for which the app returned estimates",
+  "quantity": "Original app: refused fits returned",
   "as_printed": "14",
   "canonical_value": 14,
-  "stats_key": "refused_but_app_returned",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "before_refused_but_returned",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "App coefficients exceed 1e12 in a refused fit (1 = yes)",
-  "as_printed": "exceeding 10^12",
+  "quantity": "Original app: coefficients above 10^12 in a refused fit",
+  "as_printed": "yes",
   "canonical_value": 1,
-  "stats_key": "spline4_refused_app_coef_exceeds_1e12",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "before_refused_coef_exceeds_1e12",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Combinations dosresmeta fits",
+  "as_printed": "576",
+  "canonical_value": 576,
+  "stats_key": "grid_R_fitted",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Combinations dosresmeta refuses",
+  "as_printed": "148",
+  "canonical_value": 148,
+  "stats_key": "grid_R_refused",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Refusals the corrected app matches",
+  "as_printed": "148",
+  "canonical_value": 148,
+  "stats_key": "grid_refusals_matched",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Combinations agreeing after correction (abstract: 'all 724')",
+  "as_printed": "724",
+  "canonical_value": 724,
+  "stats_key": "grid_within_tolerance",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Fixed/MM/one-stage coefficients within 10^-6 SE",
+  "as_printed": "yes",
+  "canonical_value": 1,
+  "stats_key": "after_direct_coef_below_1e-6_SE",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Two-stage REML/ML coefficients within 10^-4 SE",
+  "as_printed": "yes",
+  "canonical_value": 1,
+  "stats_key": "after_iterative_coef_below_1e-4_SE",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "Two-stage REML/ML log-likelihoods within 10^-7",
+  "as_printed": "yes",
+  "canonical_value": 1,
+  "stats_key": "after_iterative_loglik_below_1e-7",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
+ },
+ {
+  "quantity": "dosresmeta one-stage fits not converged",
+  "as_printed": "120",
+  "canonical_value": 120,
+  "stats_key": "R_one_stage_not_converged",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Worked example: studies",
   "as_printed": "22",
   "canonical_value": 22,
   "stats_key": "ex_k",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: studies with non-zero reference",
+  "quantity": "Worked example: studies with a non-zero reference",
   "as_printed": "12",
   "canonical_value": 12,
   "stats_key": "ex_nonzero_ref",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: dosresmeta linear slope per cup/day",
-  "as_printed": "-0.0326",
+  "quantity": "Worked example: dosresmeta linear slope",
+  "as_printed": "−0.0326",
   "canonical_value": -0.03255971037301708,
   "stats_key": "ex_R_slope",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: app slope as shipped",
-  "as_printed": "-0.0313",
+  "quantity": "Worked example: original app slope",
+  "as_printed": "−0.0313",
   "canonical_value": -0.03134195551047138,
-  "stats_key": "ex_app_slope",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "ex_before_slope",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: app slope, reference-relative doses",
-  "as_printed": "-0.0326",
+  "quantity": "Worked example: corrected app slope",
+  "as_printed": "−0.0326",
   "canonical_value": -0.03255952780278155,
-  "stats_key": "ex_app_centred_slope",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "stats_key": "ex_after_slope",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: largest 3-knot fitted difference",
-  "as_printed": "within 3e-8",
-  "canonical_value": 2.3659115749863346e-08,
-  "stats_key": "ex_spline_max_diff_fitted",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "quantity": "Worked example: dose of the reported RR (cups/day)",
+  "as_printed": "2",
+  "canonical_value": 2,
+  "stats_key": "ex_grid_dose",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: dose at which RR is quoted (cups/day)",
-  "as_printed": "2.81",
-  "canonical_value": 2.8125,
-  "stats_key": "ex_grid_dose_near3",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
+  "quantity": "Worked example: three-knot spline RR at that dose",
+  "as_printed": "0.87",
+  "canonical_value": 0.867766929650822,
+  "stats_key": "ex_rr_R",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
-  "quantity": "Worked example: dosresmeta RR at that dose",
-  "as_printed": "0.84",
-  "canonical_value": 0.8407012289555342,
-  "stats_key": "ex_rr_at_3cups_R",
-  "source": "outputs/full/stats.json (canonical Docker run, CI run 37189144917, commit 4846db3)",
-  "checked_by": "expected/paper_values.json (PASS on Docker, Linux, Windows, macOS)"
- },
- {
-  "quantity": "Agreement tolerances (the app's own stated claims)",
-  "as_printed": "1e-6 linear; 1e-5 splines",
-  "source": "analysis/make_outputs.py TOL_LIN, TOL_SPL; app page footer",
-  "checked_by": "method constant"
- },
- {
-  "quantity": "Frozen app commit",
-  "as_printed": "ac5435b",
-  "source": "allmeta origin/main; sha256 of dose-response.js ddffcec66783... equals live site",
-  "checked_by": "bench/run_engine.mjs prints sha256"
- },
- {
-  "quantity": "Software versions",
-  "as_printed": "dosresmeta 2.2.0, rms 8.1-1, R 4.6.0, Node 24.15.0",
-  "source": "reproduce.py environment line in every CI job",
-  "checked_by": "reproduce.py refuses version mismatch"
- },
- {
-  "quantity": "Platforms on which every checked number reproduced",
-  "as_printed": "4 (Linux, Windows, macOS, Docker)",
-  "source": "CI run 37189144917: each job prints '31/31 numbers reproduced: ALL PASS'",
-  "checked_by": "CI"
- },
- {
-  "quantity": "Engine bit-identical across x86-64",
-  "as_printed": "bit-identical",
-  "source": "CI run 37189144917 compare job: STRICT engine.jsonl 1219 values, 0 differ (Docker vs Linux, Docker vs Windows)",
-  "checked_by": "analysis/compare_runs.py"
- },
- {
-  "quantity": "Word count before references",
-  "as_printed": "960 (paper.md, excluding markdown symbols and placeholders)",
-  "source": "computed",
-  "checked_by": "-"
+  "quantity": "Worked example: spline matches within 10^-8",
+  "as_printed": "yes",
+  "canonical_value": 1,
+  "stats_key": "ex_spline_below_1e-8",
+  "source": "outputs/full/stats.json (local full run; to be replaced by the canonical Docker run)",
+  "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  }
 ]

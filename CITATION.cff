@@ -1,5 +1,5 @@
 cff-version: 1.2.0
-title: "dose-response-ma-reproducible: validation of the allmeta dose-response meta-analysis app against R dosresmeta"
+title: "dose-response-ma-reproducible: the allmeta dose-response meta-analysis app, validated against R dosresmeta"
 message: "If you use this software or validation, please cite it using the metadata below, and cite dosresmeta and the original dataset authors."
 type: software
 authors:

@@ -1,6 +1,6 @@
 {
-  "title": "Dose-response meta-analysis in the browser: validation of the allmeta dose-response app against R dosresmeta",
-  "description": "Frozen copy of the allmeta dose-response meta-analysis app (two-stage Greenland-Longnecker method; linear trend and restricted cubic splines, REML pooling) and a one-command validation of its shipped engine against the R package dosresmeta on every multi-study binary dataset bundled with dosresmeta. Includes the corpus builder, R reference fits, the engine runner, the analysis that regenerates the article's tables, figures and statistics with a PASS/FAIL check of every number, a Docker image (canonical environment: R 4.6.0, dosresmeta 2.2.0, Node 24.15.0) and CI on Linux, Windows, macOS and Docker. The validation documents both agreement (3-knot splines) and defects of the shipped app (linear trend with non-zero reference doses; 4-knot splines; no refusal of unidentifiable spline fits).",
+  "title": "Dose-response meta-analysis in the browser: a tool validated against the R package dosresmeta",
+  "description": "The allmeta dose-response meta-analysis app (linear, quadratic and restricted cubic spline curves; Greenland-Longnecker, Hamling or independent within-study covariance; two-stage REML/ML/method-of-moments/fixed-effect pooling with optional meta-regression, or one-stage pooling) and a one-command validation against the R package dosresmeta on every multi-study binary dataset bundled with dosresmeta: 724 model, covariance, approach and method combinations. The repository keeps the originally validated engine (allmeta ac5435b) beside the corrected one: the first validation found three defects (linear trend with non-zero reference doses, 4-knot spline pooling, no refusal of unidentifiable fits), which were fixed; the corrected app agrees with dosresmeta on all 724 combinations, including 148 refusals. Includes the corpus builder, R reference fits, the engine runner, the analysis that regenerates the article's tables, figures and statistics with a PASS/FAIL check of every number, a Docker image (canonical environment: R 4.6.0, dosresmeta 2.2.0, Node 24.15.0) and CI on Linux, Windows, macOS and Docker.",
   "upload_type": "software",
   "license": "MIT",
   "access_right": "open",
@@ -13,6 +13,7 @@
     "dose-response meta-analysis",
     "restricted cubic splines",
     "Greenland-Longnecker",
+    "multivariate meta-analysis",
     "dosresmeta",
     "software validation",
     "reproducibility",
