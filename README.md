@@ -32,13 +32,15 @@ Without Docker you need R 4.6.0, Node 24.15.0 and Python 3.12 or 3.13:
 
 ## What it shows
 
-| | Original app (allmeta `ac5435b`) | Corrected app (`app/`) |
-|---|---|---|
-| Linear trend agrees with dosresmeta | 4 of 16 datasets: doses were not measured from each study's reference dose | 16 of 16 |
-| 3-knot spline | 14 of 15 (within its own claimed 1e-5) | 15 of 15 |
-| 4-knot spline | 0 of 3: the pooling optimiser stopped far from the REML optimum | 3 of 3 |
-| Fits dosresmeta refuses (too few doses per study) | 14 returned without warning | 0: refused, with the studies named |
-| Full grid: 724 model × covariance × approach × method combinations | — | all 724 agree: 576 fits within tolerance, and the same 148 refusals |
+The app is validated at **allmeta commit [`0f8b86d`](https://github.com/mahmood726-cyber/allmeta/commit/0f8b86d984e4cba36f4f517f674a233d205e5e22)**. `app/` is byte-identical to that commit.
+
+| | Result |
+|---|---|
+| Full grid: 724 model × covariance × approach × method combinations on 16 datasets (187 studies) | All 724 agree with dosresmeta. 576 fits agree within tolerance, and the app refuses the same 148 fits as unidentifiable. |
+| Two-stage REML, by dataset | Linear trend 16/16; 3-knot spline 15/15 (1 refused by both); 4-knot 3/3 (13 refused by both); 5-knot 2/2 (14 refused by both). |
+| Worked example: coffee and all-cause mortality | Linear slope −0.0326 per cup/day from both. 3-knot spline: RR 0.87 (0.84 to 0.90) at 2 cups/day; non-linearity χ² 24.5, p < 0.0001. |
+
+Earlier versions of the app had known issues, fixed in [allmeta PR #76](https://github.com/mahmood726-cyber/allmeta/pull/76). See [CHANGELOG.md](CHANGELOG.md).
 
 Tolerances follow allmeta's own parity test (`hub/shared/tests/_dr_parity_check.mjs`, mirrored in `analysis/make_outputs.py`):
 
@@ -51,11 +53,10 @@ dosresmeta's one-stage optimiser stops at 100 Nelder–Mead evaluations. In 120 
 
 | Path | Contents |
 |---|---|
-| `app/` | Corrected app, byte-identical to allmeta (see `app/shared/dose-response.js` header) |
-| `app_before/shared/` | Engine first validated, allmeta `ac5435b`, kept for the before/after comparison |
+| `app/` | The app, byte-identical to allmeta commit `0f8b86d` |
 | `bench/build_corpus.R` | Builds the 17-dataset corpus from dosresmeta |
 | `bench/reference_dosresmeta.R` | dosresmeta reference fits over the option grid |
-| `bench/run_engine.mjs` | Runs both JavaScript engines on the same data |
+| `bench/run_engine.mjs` | Runs the app's JavaScript engine on the same data |
 | `analysis/make_outputs.py` | Tables, figures, statistics, PASS/FAIL |
 | `analysis/compare_runs.py` | Cross-platform comparison |
 | `expected/` | Every number as printed in the paper |
@@ -67,13 +68,13 @@ dosresmeta's one-stage optimiser stops at 100 Nelder–Mead evaluations. In 120 
 
 | File | Paper |
 |---|---|
-| `docs/screenshots/step1.png` … `step6.png` | Figure 1: using the app |
-| `table1_found_and_fixed.csv` | Table 1: defects found, and agreement before and after correction |
-| `table2_parity_by_configuration.csv` | Table 2: agreement by model, covariance, approach and method |
-| `table3_parity_all_fits.csv`, `table4_before_by_dataset.csv` | Every fit, and the original engine by dataset (extended data) |
-| `figure2_before_after.png` (+ `.csv`) | Figure 2: before and after, by dataset |
+| `docs/screenshots/step1.png` … `step6.png` | Figure 1: using the app, step by step (`captions.md`) |
+| `table1_parity_by_configuration.csv` | Table 1: agreement by model, covariance, approach and method |
+| `table2_by_dataset.csv` | Table 2: results by dataset |
+| `table3_parity_all_fits.csv` | Every fit (extended data) |
+| `figure2_by_dataset.png` (+ `.csv`) | Figure 2: agreement by dataset |
 | `figure3_coffee_mortality.png` (+ `.csv`) | Figure 3: worked example (coffee and mortality) |
-| `figure4_parity_grid.png` (+ `.csv`) | Figure 4: all fits, corrected app versus dosresmeta |
+| `figure4_parity_grid.png` (+ `.csv`) | Figure 4: all fits, by approach and method |
 | `visual_abstract.png` | Visual abstract |
 | `stats.json` | Every number quoted in the text |
 | `reproduction_report.md` | Expected versus reproduced, PASS/FAIL per number |
@@ -81,9 +82,9 @@ dosresmeta's one-stage optimiser stops at 100 Nelder–Mead evaluations. In 120 
 ## Environment and determinism
 
 - **R 4.6.0.** The image is `rocker/r-ver:4.6.0`. dosresmeta 2.2.0, rms 8.1-1, mvmeta 1.0.3, mixmeta 1.2.2 and their dependencies come from the Posit Package Manager snapshot of 2026-10-01.
-- **Node 24.15.0** (`.nvmrc`) runs the app's JavaScript engines. There are no npm dependencies.
+- **Node 24.15.0** (`.nvmrc`) runs the app's JavaScript engine. There are no npm dependencies.
 - **Python** builds the tables and figures (numpy and matplotlib, pinned in `requirements.txt`).
-- **Docker is the canonical environment.** CI runs the full validation on every push on Linux, Windows, macOS and Docker. `analysis/compare_runs.py` then requires the corpus and the engines' output to be bit-identical across the x86-64 runs. macOS on ARM is reported but not required to match: V8 there can differ in the last bit.
+- **Docker is the canonical environment.** CI runs the full validation on every push on Linux, Windows, macOS and Docker. `analysis/compare_runs.py` then requires the corpus and the engine's output to be bit-identical across the x86-64 runs. macOS on ARM is reported but not required to match: V8 there can differ in the last bit.
 - **R's own values** differ between operating systems in the last bits. The printed numbers are chosen to be robust to this, and are checked on every platform.
 
 Run time: a few minutes, mostly the 724 R fits.

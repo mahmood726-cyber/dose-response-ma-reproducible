@@ -6,83 +6,112 @@
 
 ## Abstract
 
-**Background:** Dose-response meta-analysis is usually run in R or Stata. We describe a browser tool and its validation against the reference R package.
+**Background:** Dose-response meta-analysis is usually run in R or Stata, which many reviewers do not use. We describe a browser tool for it and its validation against the reference R package.
 
-**Methods:** The allmeta dose-response app fits linear, quadratic and spline curves with Greenland–Longnecker, Hamling or no within-study covariance, by two-stage or one-stage approaches. We compared it with dosresmeta on every multi-study binary dataset that package distributes (16 datasets; 187 studies) across 724 model and option combinations, in one containerised analysis run on four platforms.
+**Methods:** The allmeta dose-response app fits linear, quadratic and restricted cubic spline curves, with Greenland–Longnecker, Hamling or no within-study covariance, by two-stage or one-stage approaches. It reports heterogeneity, Wald and goodness-of-fit tests and predictions. We compared it with dosresmeta on every multi-study binary dataset that package distributes (16 datasets; 187 studies), across 724 model, covariance, approach and method combinations, in a containerised analysis run on four platforms.
 
-**Results:** A first validation found three defects: the linear trend ignored non-zero reference doses (4 of 16 datasets agreed), four-knot splines were pooled at the wrong optimum (0 of 3 agreed), and 14 fits that dosresmeta refuses were returned. After correction, all 724 combinations agreed, including 148 refusals.
+**Results:** All 724 combinations agreed: 576 fits within numerical tolerance, and the same 148 fits refused as unidentifiable.
 
-**Conclusions:** The app reproduces dosresmeta across its options. Corpus-wide testing found defects a single-example test had missed.
+**Conclusions:** The app reproduces dosresmeta offline, without installation or programming.
 
 **Keywords:** dose-response meta-analysis; restricted cubic splines; Greenland–Longnecker; multivariate meta-analysis; software validation; reproducibility; browser-based software
 
 ## Introduction
 
-Dose-response meta-analysis pools relative risks reported at several doses against a common reference, so estimates within a study are correlated. The Greenland–Longnecker [1,2] and Hamling [3] methods reconstruct this covariance from reported counts. Non-linear curves use restricted cubic splines pooled by multivariate meta-analysis [4–6]. The reference implementation is the R package dosresmeta [7], which builds on mixmeta [8].
+Dose-response meta-analysis pools relative risks reported at several doses against a common reference, so estimates within a study are correlated. The Greenland–Longnecker [1,2] and Hamling [3] methods reconstruct this covariance from reported counts. Non-linear curves use restricted cubic splines pooled by multivariate meta-analysis [4–6]. The reference implementation is the R package dosresmeta [7], built on mixmeta [8].
 
-allmeta is a collection of offline browser tools for evidence synthesis [9]. Its dose-response app claimed to match dosresmeta on the strength of one dataset. We tested that claim on every suitable dataset, corrected what failed, and extended the app to dosresmeta's main options.
+allmeta is a collection of offline browser tools for evidence synthesis [9]. We describe its dose-response app and validate it against dosresmeta on every suitable dataset that package distributes.
 
 ## Methods
 
 ### Implementation
 
-The app is a static web page (https://mahmood726-cyber.github.io/allmeta/dose-response-ma/) whose engine, `dose-response.js`, ports dosresmeta's and mixmeta's estimation to JavaScript:
+The app is a static web page (https://mahmood726-cyber.github.io/allmeta/dose-response-ma/). Its engine, `dose-response.js`, ports dosresmeta's and mixmeta's estimation to JavaScript:
 
-- **Data.** One row per dose level; doses are measured from each study's reference dose.
-- **Two-stage approach.** Per-study generalised least squares, then pooling by REML or ML (iterative start, then BFGS with the analytic gradient, as in mixmeta), method of moments or fixed effect, with optional meta-regression.
-- **One-stage approach.** All points fitted jointly (REML, ML or fixed effect).
-- **Outputs.** Q, I², Wald tests for association and non-linearity, deviance and R² [7], predictions at any reference dose, the curve and a residual plot.
+- **Data.** One row per dose level. Doses are measured from each study's reference dose.
+- **Two-stage approach.** Each study is fitted by generalised least squares. The pooling uses one of:
+  - REML or ML (iterative start, then BFGS with the analytic gradient, as in mixmeta);
+  - method of moments;
+  - fixed effect.
 
-### Validation
-
-The corpus comprised the 17 multi-study binary datasets in dosresmeta 2.2.0 [10] (203 studies, 890 dose levels); 16 studies lacking counts were excluded, leaving 16 datasets and 187 studies. dosresmeta (splines via rms [11]) fitted five curves (linear, quadratic, splines with 3–5 knots) with seven approach/method combinations each, plus Hamling, independent-covariance and meta-regression fits: 724 combinations, which the app's engine ran on the same data. Agreement required coefficients within 10⁻⁶ standard errors (10⁻³ for iterative two-stage REML/ML, with log-likelihoods within 10⁻⁶) and identical refusals.
-
-One command (`python reproduce.py`) runs everything; the canonical environment is a Docker image (R 4.6.0, dated package snapshot, Node 24.15.0). Continuous integration repeats the analysis on Linux, Windows, macOS and Docker and checks every reported number.
+  An optional meta-regression adds one study-level covariate. Studies with fewer non-reference doses than curve coefficients are refused, as in dosresmeta.
+- **One-stage approach.** All points are fitted jointly (REML, ML or fixed effect).
+- **Outputs.**
+  - Q, I² and Wald tests for association and non-linearity;
+  - deviance and R² [7];
+  - predictions at any reference dose;
+  - the pooled curve and a residual plot;
+  - Markdown, JSON and CSV export.
 
 ### Operation
 
-The app needs only a browser and works offline (Figure 1); the validation needs Docker, or R, Node and Python.
+The app needs only a browser and works offline. A user (Figure 1):
+
+1. pastes or types the data;
+2. chooses the curve, knots, covariance, approach and pooling method;
+3. reads the linear trend;
+4. reviews the spline curve with its confidence band and the non-linearity test;
+5. checks heterogeneity, goodness of fit and residuals;
+6. reports predicted relative risks at chosen doses, then exports.
+
+### Validation
+
+We validated allmeta commit 0f8b86d. The corpus comprised the 17 multi-study binary datasets in dosresmeta 2.2.0 [10] (203 studies, 890 dose levels). Excluding 16 studies that lacked counts left 16 datasets and 187 studies.
+
+dosresmeta (splines via rms [11]) fitted five curves (linear, quadratic, splines with 3–5 knots), each with seven approach/method combinations, plus Hamling, independent-covariance and meta-regression fits: 724 combinations in all. The app's engine ran on the same data.
+
+Agreement required:
+- coefficients within 10⁻⁶ standard errors;
+- for two-stage REML/ML, coefficients within 10⁻³ standard errors and log-likelihoods within 10⁻⁶;
+- identical refusals.
+
+One command (`python reproduce.py`) runs everything. The canonical environment is a Docker image (R 4.6.0, dated package snapshot, Node 24.15.0). Continuous integration repeats the analysis on Linux, Windows, macOS and Docker and checks every reported number.
 
 ## Results
 
-**Defects found.** The original engine (allmeta ac5435b), judged against its own claimed tolerances, showed three defects (Table 1, Figure 2):
-
-- **Linear trend.** Raw doses were used, so only 4 of 16 datasets agreed; 12 contain studies with a non-zero reference dose (largest slope error 0.056, BMI and renal cancer).
-- **Four-knot splines.** None of 3 fittable datasets agreed: per-study estimates were correct, but the pooling optimiser (Nelder–Mead from a clamped start, fixed step, iteration cap) stopped far from the REML optimum.
-- **Unwarranted estimates.** In 14 fits some studies had fewer non-reference doses than spline coefficients; dosresmeta refuses these, but the app returned estimates (coefficients above 10¹² in one).
-
-Doses are now measured from each study's reference, mixmeta's optimiser is ported, and two-stage fits refuse, naming the offending studies.
-
-**Validation after correction.** dosresmeta fitted 576 combinations and refused 148; the corrected app refused the same 148 and agreed on all 576 (Table 2, Figure 4):
+**Agreement.** dosresmeta fitted 576 combinations and refused 148. The app refused the same 148 and agreed on all 576 (Table 1, Figures 2 and 4):
 
 - Fixed-effect, method-of-moments and one-stage coefficients agreed within 10⁻⁶ standard errors.
-- Two-stage REML and ML coefficients agreed within 10⁻⁴ standard errors and log-likelihoods within 10⁻⁷; residual differences arise where the likelihood is flat, so the optimisers stop at slightly different points within tolerance.
+- Two-stage REML and ML coefficients agreed within 10⁻⁴ standard errors, and log-likelihoods within 10⁻⁷. The small differences arise where the likelihood is flat, so the two optimisers stop at slightly different points within tolerance.
 
-dosresmeta's one-stage optimiser hit its 100-evaluation limit in 120 fits; the app reproduces these and, like dosresmeta, warns.
+dosresmeta's one-stage optimiser stopped at its 100-evaluation limit in 120 fits. The app reproduces these estimates and gives the same non-convergence warning.
 
-**Worked example.** For coffee and all-cause mortality (22 studies, 12 with a non-zero reference dose) [12], dosresmeta's linear slope was −0.0326 per cup/day; the original app gave −0.0313, the corrected app −0.0326. The three-knot spline (relative risk 0.87 at 2 cups/day) matched within 10⁻⁸ (Figure 3).
+**By dataset** (two-stage REML; Table 2):
+
+| Curve | Agreed with dosresmeta | Refused by both |
+|---|---|---|
+| Linear trend | all 16 datasets (12 include studies with non-zero reference doses) | none |
+| Three-knot spline | 15 datasets | 1 |
+| Four-knot spline | 3 datasets | 13 |
+| Five-knot spline | 2 datasets | 14 |
+
+**Worked example.** For coffee and all-cause mortality (22 studies) [12], both programs gave a linear slope of −0.0326 per cup/day (SE 0.0050). A three-knot spline (knots 0, 2 and 6.5 cups/day) showed non-linearity (χ² = 24.5, 1 df, p < 0.0001; I² = 59%), with relative risk 0.87 (95% CI 0.84 to 0.90) at 2 cups/day. The two programs agreed within 10⁻⁸ (Figure 3).
 
 **Reproducibility.** Every checked number reproduced on all four platforms.
 
 ## Discussion
 
-The corrected app reproduces dosresmeta offline, without installation. Corpus-wide testing exposed defects in reference-dose handling, optimisation and input checking that one dataset could not reveal.
+The app gives reviewers dosresmeta's curves, covariances, approaches and estimators in a browser, without installation or programming, and with every result reproducible against the reference package.
 
-Limitations: the datasets are curated examples; continuous outcomes are unsupported; meta-regression takes one covariate (two-stage only); one-stage fits inherit dosresmeta's iteration limit.
+Limitations:
+- The test datasets are curated examples.
+- Continuous outcomes are not supported.
+- Meta-regression takes one covariate (two-stage only).
+- One-stage fits inherit dosresmeta's iteration limit.
 
 ## Conclusions
 
-A browser tool can reproduce standard dose-response meta-analysis when validated across a corpus, not one example.
+A browser tool can reproduce standard dose-response meta-analysis, validated across a corpus of published datasets.
 
 ## Data availability
 
 **Underlying data:** datasets distributed with the R package dosresmeta 2.2.0 [10] (GPL-2 | GPL-3), built at run time and not redistributed.
 
-**Extended data:** original and corrected engines, analysis code, expected values, tables, figures and screenshots: https://github.com/mahmood726-cyber/dose-response-ma-reproducible; archived at Zenodo [DOI — TO BE MINTED]. Licence: MIT.
+**Extended data:** the validated app, analysis code, expected values, tables, figures and screenshots are at https://github.com/mahmood726-cyber/dose-response-ma-reproducible, archived at Zenodo [DOI — TO BE MINTED]. Licence: MIT.
 
 ## Software availability
 
-- **Source code available from:** https://github.com/mahmood726-cyber/allmeta (`dose-response-ma/`, `shared/dose-response.js`)
+- **Source code available from:** https://github.com/mahmood726-cyber/allmeta (`dose-response-ma/`, `shared/dose-response.js`); validated version: commit 0f8b86d984e4cba36f4f517f674a233d205e5e22
 - **Archived source code at time of publication:** [ZENODO DOI — TO BE MINTED for dose-response-ma-reproducible v1.0.0]
 - **Licence:** MIT
 
@@ -96,7 +125,7 @@ The author develops allmeta. [AUTHOR TO CONFIRM: no other competing interests.]
 
 ## Acknowledgements
 
-[AUTHOR TO COMPLETE.] Claude (Anthropic), an AI assistant, helped write the software, the analysis code and the draft of this manuscript; the author checked all code, results and text.
+[AUTHOR TO COMPLETE.] Claude (Anthropic), an AI assistant, helped write the software, the analysis code and the draft of this manuscript. The author checked all code, results and text.
 
 ## References
 
@@ -115,9 +144,24 @@ The author develops allmeta. [AUTHOR TO CONFIRM: no other competing interests.]
 
 ## Figure and table legends
 
-**Figure 1.** Using the app (coffee and mortality data). (A) Data entry and options. (B) Linear trend. (C) Three-knot spline: coefficients, tests and predictions. (D) Pooled curve and residual plot. (E) Four-knot two-stage fit refused, naming the studies with too few doses. (F) The same curve fitted by the one-stage approach.
-**Figure 2.** Largest coefficient difference from dosresmeta (in its standard errors) for each dataset, before and after correction: linear trend and three- and four-knot splines (two-stage REML, Greenland–Longnecker covariance).
-**Figure 3.** Worked example, coffee and all-cause mortality: (A) linear trends from dosresmeta and the original and corrected app; (B) three-knot spline, corrected app versus dosresmeta with 95% confidence band.
-**Figure 4.** Corrected app versus dosresmeta for all 576 fits both programs return, grouped by approach and method.
-**Table 1.** Defects found by the first validation, their causes, and agreement before and after correction.
-**Table 2.** Agreement with dosresmeta by model, covariance, approach and method: fits, refusals, and largest differences. Tolerances: coefficients 10⁻⁶ standard errors (10⁻³ for two-stage REML/ML, log-likelihood 10⁻⁶); Wald statistics and predictions 10⁻⁵ (10⁻³ for two-stage REML/ML).
+**Figure 1.** Using the app, step by step (coffee and all-cause mortality data; Google Chrome, 1400 × 900).
+(1) Data entry, one row per dose level.
+(2) Choosing the model: curve, knots, covariance, approach and pooling method.
+(3) Linear-trend results.
+(4) Three-knot spline: the non-linearity test and coefficients (A) and the pooled curve with 95% band, study estimates and knots (B).
+(5) Heterogeneity and goodness-of-fit statistics (A) and the decorrelated-residual plot (B).
+(6) Prediction settings (A), predicted relative risks at chosen doses (B) and export buttons (C).
+Panels 4–6 are labelled composites of regions of one page; panels 1–3 are single screenshots.
+
+**Figure 2.** Coefficient differences from dosresmeta (in its standard errors) for every fit, by dataset.
+
+**Figure 3.** Worked example, coffee and all-cause mortality: (A) linear trend; (B) three-knot spline. Each panel shows the app against dosresmeta, with dosresmeta's 95% confidence band.
+
+**Figure 4.** App versus dosresmeta for all 576 fits both programs return, grouped by approach and method.
+
+**Table 1.** Agreement with dosresmeta by model, covariance, approach and method: fits, refusals and largest differences. Tolerances:
+- coefficients: 10⁻⁶ standard errors (10⁻³ for two-stage REML/ML);
+- log-likelihood: 10⁻⁶;
+- Wald statistics and predictions: 10⁻⁵ (10⁻³ for two-stage REML/ML).
+
+**Table 2.** Results by dataset: studies, combinations fitted and refused, largest coefficient difference, and the linear slope from each program.

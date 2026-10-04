@@ -5,3 +5,4 @@ __pycache__/
 .venv/
 venv/
 *.sqlite
+docs/screenshots/_full_*.png

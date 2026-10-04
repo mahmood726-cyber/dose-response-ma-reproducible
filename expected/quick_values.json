@@ -5,26 +5,6 @@
    "value": 3,
    "decimals": 0
   },
-  "before_linear_match": {
-   "value": 2,
-   "decimals": 0
-  },
-  "after_linear_match": {
-   "value": 3,
-   "decimals": 0
-  },
-  "before_spline4_match": {
-   "value": 0,
-   "decimals": 0
-  },
-  "after_spline4_match": {
-   "value": 2,
-   "decimals": 0
-  },
-  "spline4_fitted_by_R": {
-   "value": 2,
-   "decimals": 0
-  },
   "grid_fits": {
    "value": 137,
    "decimals": 0
@@ -37,11 +17,23 @@
    "value": 13,
    "decimals": 0
   },
+  "linear_agree": {
+   "value": 3,
+   "decimals": 0
+  },
+  "spline4_fitted_by_R": {
+   "value": 2,
+   "decimals": 0
+  },
+  "spline4_agree": {
+   "value": 2,
+   "decimals": 0
+  },
   "ex_R_slope": {
    "value": -0.0326,
    "decimals": 4
   },
-  "ex_after_slope": {
+  "ex_app_slope": {
    "value": -0.0326,
    "decimals": 4
   }

@@ -9,7 +9,7 @@ REPORTED (not required to be identical):
   platform by reproduce.py.
 Runs listed after --report-only (e.g. macOS on ARM) are compared and reported, but not required to be
 bit-identical: V8 on arm64 can differ from x86-64 in the last bit of floating-point results, and the
-app's Nelder-Mead spline optimiser amplifies such differences.
+app's iterative optimisers (BFGS, Nelder-Mead) can amplify such differences.
   python analysis/compare_runs.py canonical strict1 strict2 --report-only arm_run
 """
 import json
