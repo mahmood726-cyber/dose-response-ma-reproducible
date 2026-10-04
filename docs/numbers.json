@@ -4,7 +4,7 @@
   "as_printed": "17",
   "canonical_value": 17,
   "stats_key": "datasets",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -12,7 +12,7 @@
   "as_printed": "203",
   "canonical_value": 203,
   "stats_key": "studies_total",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -20,7 +20,7 @@
   "as_printed": "890",
   "canonical_value": 890,
   "stats_key": "dose_levels_total",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -28,7 +28,7 @@
   "as_printed": "16",
   "canonical_value": 16,
   "stats_key": "studies_excluded_missing_counts",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -36,7 +36,7 @@
   "as_printed": "16",
   "canonical_value": 16,
   "stats_key": "datasets_analysed",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -44,7 +44,7 @@
   "as_printed": "187",
   "canonical_value": 187,
   "stats_key": "studies_analysed",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -52,7 +52,7 @@
   "as_printed": "724",
   "canonical_value": 724,
   "stats_key": "grid_fits",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -60,7 +60,7 @@
   "as_printed": "724",
   "canonical_value": 724,
   "stats_key": "grid_within_tolerance",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -68,7 +68,7 @@
   "as_printed": "576",
   "canonical_value": 576,
   "stats_key": "grid_R_fitted",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -76,7 +76,7 @@
   "as_printed": "148",
   "canonical_value": 148,
   "stats_key": "grid_R_refused",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -84,7 +84,7 @@
   "as_printed": "148",
   "canonical_value": 148,
   "stats_key": "grid_refusals_matched",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -92,7 +92,7 @@
   "as_printed": "yes",
   "canonical_value": 1,
   "stats_key": "direct_coef_below_1e-6_SE",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -100,7 +100,7 @@
   "as_printed": "yes",
   "canonical_value": 1,
   "stats_key": "iterative_coef_below_1e-4_SE",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -108,7 +108,7 @@
   "as_printed": "yes",
   "canonical_value": 1,
   "stats_key": "iterative_loglik_below_1e-7",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -116,7 +116,7 @@
   "as_printed": "120",
   "canonical_value": 120,
   "stats_key": "R_one_stage_not_converged",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -124,7 +124,7 @@
   "as_printed": "16",
   "canonical_value": 16,
   "stats_key": "linear_agree",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -132,7 +132,7 @@
   "as_printed": "12",
   "canonical_value": 12,
   "stats_key": "linear_datasets_with_nonzero_reference",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -140,7 +140,7 @@
   "as_printed": "15",
   "canonical_value": 15,
   "stats_key": "spline3_agree",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -148,7 +148,7 @@
   "as_printed": "1",
   "canonical_value": 1,
   "stats_key": "spline3_refusals_matched",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -156,7 +156,7 @@
   "as_printed": "3",
   "canonical_value": 3,
   "stats_key": "spline4_agree",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -164,7 +164,7 @@
   "as_printed": "13",
   "canonical_value": 13,
   "stats_key": "spline4_refusals_matched",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -172,7 +172,7 @@
   "as_printed": "2",
   "canonical_value": 2,
   "stats_key": "spline5_agree",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -180,7 +180,7 @@
   "as_printed": "14",
   "canonical_value": 14,
   "stats_key": "spline5_refusals_matched",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -188,7 +188,7 @@
   "as_printed": "22",
   "canonical_value": 22,
   "stats_key": "ex_k",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -196,7 +196,7 @@
   "as_printed": "−0.0326",
   "canonical_value": -0.03255971037301708,
   "stats_key": "ex_R_slope",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -204,7 +204,7 @@
   "as_printed": "−0.0326",
   "canonical_value": -0.03255971037301709,
   "stats_key": "ex_app_slope",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -212,7 +212,7 @@
   "as_printed": "0.0050",
   "canonical_value": 0.0050345792540384205,
   "stats_key": "ex_R_slope_se",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -220,7 +220,7 @@
   "as_printed": "0/2/6.5",
   "canonical_value": "0/2/6.5",
   "stats_key": "ex_knots",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -228,7 +228,7 @@
   "as_printed": "24.5",
   "canonical_value": 24.453592510607116,
   "stats_key": "ex_nonlin_chi2",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -236,7 +236,7 @@
   "as_printed": "yes",
   "canonical_value": 1,
   "stats_key": "ex_nonlin_p_below_1e-4",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -244,7 +244,7 @@
   "as_printed": "59",
   "canonical_value": 58.57627537964635,
   "stats_key": "ex_I2",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -252,31 +252,31 @@
   "as_printed": "2",
   "canonical_value": 2,
   "stats_key": "ex_grid_dose",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Worked example: RR at 2 cups/day",
   "as_printed": "0.87",
-  "canonical_value": 0.867766929650822,
+  "canonical_value": 0.8677669294750807,
   "stats_key": "ex_rr_R",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Worked example: RR lower 95% limit",
   "as_printed": "0.84",
-  "canonical_value": 0.835872124772536,
+  "canonical_value": 0.835872124494075,
   "stats_key": "ex_rr_lo",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
   "quantity": "Worked example: RR upper 95% limit",
   "as_printed": "0.90",
-  "canonical_value": 0.9008787610910366,
+  "canonical_value": 0.9008787610262595,
   "stats_key": "ex_rr_hi",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  },
  {
@@ -284,7 +284,7 @@
   "as_printed": "yes",
   "canonical_value": 1,
   "stats_key": "ex_spline_below_1e-8",
-  "source": "outputs/full/stats.json (local full run; replaced by the canonical Docker run before release)",
+  "source": "outputs/full/stats.json from the canonical Docker run (CI run 37194689671, commit 6b28522)",
   "checked_by": "expected/paper_values.json (reproduce.py PASS/FAIL on Docker, Linux, Windows, macOS)"
  }
 ]
