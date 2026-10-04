@@ -13,7 +13,7 @@
    "value": 890,
    "decimals": 0
   },
-  "datasets_with_reference": {
+  "datasets_analysed": {
    "value": 16,
    "decimals": 0
   },
@@ -25,11 +25,11 @@
    "value": 187,
    "decimals": 0
   },
-  "linear_match_shipped": {
+  "before_linear_match": {
    "value": 4,
    "decimals": 0
   },
-  "linear_match_centred": {
+  "before_linear_centred_match": {
    "value": 16,
    "decimals": 0
   },
@@ -37,44 +37,20 @@
    "value": 12,
    "decimals": 0
   },
-  "linear_max_absdiff_slope_shipped": {
+  "before_linear_max_absdiff": {
    "value": 0.056,
    "decimals": 3
   },
-  "linear_worst_dataset_shipped": {
+  "before_linear_worst_dataset": {
    "value": "bmi_rc",
    "decimals": 0
-  },
-  "linear_max_absdiff_slope_centred": {
-   "value": 2e-07,
-   "decimals": 7
-  },
-  "linear_max_absdiff_se_centred": {
-   "value": 2e-07,
-   "decimals": 7
   },
   "spline3_fitted_by_R": {
    "value": 15,
    "decimals": 0
   },
-  "spline3_match": {
-   "value": 14,
-   "decimals": 0
-  },
-  "spline3_max_absdiff": {
-   "value": 1e-06,
-   "decimals": 7
-  },
-  "spline3_max_absdiff_fitted": {
-   "value": 1.3e-05,
-   "decimals": 6
-  },
   "spline4_fitted_by_R": {
    "value": 3,
-   "decimals": 0
-  },
-  "spline4_match": {
-   "value": 0,
    "decimals": 0
   },
   "spline3_refused_by_R": {
@@ -85,12 +61,80 @@
    "value": 13,
    "decimals": 0
   },
-  "refused_but_app_returned": {
+  "before_spline3_match": {
    "value": 14,
    "decimals": 0
   },
-  "spline4_refused_app_coef_exceeds_1e12": {
+  "before_spline4_match": {
+   "value": 0,
+   "decimals": 0
+  },
+  "before_refused_but_returned": {
+   "value": 14,
+   "decimals": 0
+  },
+  "before_refused_coef_exceeds_1e12": {
    "value": 1,
+   "decimals": 0
+  },
+  "grid_fits": {
+   "value": 724,
+   "decimals": 0
+  },
+  "grid_R_fitted": {
+   "value": 576,
+   "decimals": 0
+  },
+  "grid_R_refused": {
+   "value": 148,
+   "decimals": 0
+  },
+  "grid_refusals_matched": {
+   "value": 148,
+   "decimals": 0
+  },
+  "grid_app_refused_R_fitted": {
+   "value": 0,
+   "decimals": 0
+  },
+  "grid_within_tolerance": {
+   "value": 724,
+   "decimals": 0
+  },
+  "grid_all_within_tolerance": {
+   "value": 1,
+   "decimals": 0
+  },
+  "after_iterative_coef_below_1e-4_SE": {
+   "value": 1,
+   "decimals": 0
+  },
+  "after_iterative_loglik_below_1e-7": {
+   "value": 1,
+   "decimals": 0
+  },
+  "after_direct_coef_below_1e-6_SE": {
+   "value": 1,
+   "decimals": 0
+  },
+  "R_one_stage_not_converged": {
+   "value": 120,
+   "decimals": 0
+  },
+  "after_linear_match": {
+   "value": 16,
+   "decimals": 0
+  },
+  "after_spline3_match": {
+   "value": 15,
+   "decimals": 0
+  },
+  "after_spline4_match": {
+   "value": 3,
+   "decimals": 0
+  },
+  "after_refused_but_returned": {
+   "value": 0,
    "decimals": 0
   },
   "ex_k": {
@@ -105,25 +149,13 @@
    "value": -0.0326,
    "decimals": 4
   },
-  "ex_app_slope": {
+  "ex_before_slope": {
    "value": -0.0313,
    "decimals": 4
   },
-  "ex_app_centred_slope": {
+  "ex_after_slope": {
    "value": -0.0326,
    "decimals": 4
-  },
-  "ex_spline_max_diff_fitted": {
-   "value": 2e-08,
-   "decimals": 8
-  },
-  "ex_grid_dose_near3": {
-   "value": 2.81,
-   "decimals": 2
-  },
-  "ex_rr_at_3cups_R": {
-   "value": 0.84,
-   "decimals": 2
   }
  }
 }

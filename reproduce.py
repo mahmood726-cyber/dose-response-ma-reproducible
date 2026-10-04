@@ -1,11 +1,12 @@
 #!/usr/bin/env python3
 """Re-run the dose-response validation and check every number in the paper.
 
-  python reproduce.py            # full run: all 17 dosresmeta datasets (about 1 minute)
+  python reproduce.py            # full run: all 17 dosresmeta datasets (a few minutes)
   python reproduce.py --quick    # 3 datasets, a few seconds
 
 Steps: check tool versions -> build the corpus from the R package dosresmeta -> dosresmeta
-reference fits (R) -> the app's shipped engine on the same data (Node) -> tables, figures,
+reference fits over the model/option grid (R) -> the app's engine, original and corrected, on the
+same data (Node) -> tables, figures,
 statistics -> expected vs reproduced, PASS/FAIL per number. Exit code 0 only if all pass.
 """
 import argparse
@@ -19,7 +20,7 @@ import time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
-R_PINS = {"dosresmeta": "2.2.0", "rms": "8.1.1", "mvmeta": "1.0.3"}
+R_PINS = {"dosresmeta": "2.2.0", "rms": "8.1.1", "mvmeta": "1.0.3", "mixmeta": "1.2.2"}
 QUICK = ["alcohol_cvd", "alcohol_crc", "coffee_mort"]
 
 
@@ -34,7 +35,7 @@ def check_versions(strict):
     problems = []
     rscript = shutil.which("Rscript") or sys.exit("Rscript not found on PATH (R 4.6.0 needed; see README or use Docker)")
     node = shutil.which("node") or sys.exit("node not found on PATH (Node 24.15.0 needed)")
-    rv = sh([rscript, "-e", "cat(as.character(getRversion()), sapply(c('dosresmeta','rms','mvmeta'), function(p) tryCatch(as.character(packageVersion(p)), error=function(e) 'missing')))"]).split()
+    rv = sh([rscript, "-e", "cat(as.character(getRversion()), sapply(c('dosresmeta','rms','mvmeta','mixmeta'), function(p) tryCatch(as.character(packageVersion(p)), error=function(e) 'missing')))"]).split()
     nv = sh([node, "--version"]).strip().lstrip("v")
     if rv[0] != "4.6.0": problems.append(f"R {rv[0]} (pinned 4.6.0)")
     for (p, want), got in zip(R_PINS.items(), rv[1:]):
@@ -51,7 +52,7 @@ def check_versions(strict):
                 if version(k) != v: problems.append(f"{k} {version(k)} (pinned {v})")
             except Exception:
                 sys.exit(f"python package {k} missing: run  python -m pip install -r requirements.txt")
-    print(f"environment: R {rv[0]} (dosresmeta {rv[1]}, rms {rv[2]}, mvmeta {rv[3]}), Node {nv}, Python {platform.python_version()}, {platform.system()} {platform.machine()}")
+    print(f"environment: R {rv[0]} (dosresmeta {rv[1]}, rms {rv[2]}, mvmeta {rv[3]}, mixmeta {rv[4]}), Node {nv}, Python {platform.python_version()}, {platform.system()} {platform.machine()}")
     if problems:
         msg = "version mismatch: " + "; ".join(problems)
         if strict: sys.exit(msg + "\n(use --allow-version-mismatch to run anyway)")
